@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #222;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.App-content {
+  display: flex;
+  justify-content: center;
+}
+
+.App-form {
+  width: 75%;
+  flex-wrap: wrap; 
+}
+
+.App-formItem {
+  flex: 1 0 auto;
+  margin: 5px;
+}
+
+.App-formItem:nth-child(3n) {
+  flex-basis: 100%;
+}
+
+.App-footer {
+  margin-top: 25px;
+}
+
+ .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    margin: 20px;
+    margin-left: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 125px;
+} 
