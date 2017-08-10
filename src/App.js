@@ -16,22 +16,27 @@ class App extends Component {
   }
 
   componentDidMount() {
+    // Check if we have stored user credentials we can access, 
+    // and sign in if so
     this.handleSignIn();
   }
 
   handleSignUp(event) {
     event.preventDefault();
+    // Create a new passordCredential object
     const c = new PasswordCredential(event.target);
-    debugger;
 
     navigator
       .credentials
+      // Store the password information in your browser
       .store(c)
       .catch(() => console.error('Sign Up Failed'));
   }
 
   handleSignIn(event) {
+    // Check if your browser supports the credentials api
     if (navigator.credentials) {
+      // Try to password informations from your browser
       navigator.credentials.get({
         password: true,
         federated: {
@@ -39,10 +44,11 @@ class App extends Component {
             'https://accounts.google.com'
           ]
         },
-        mediation: 'silent'
+        mediation: 'silent' // silent | optional | required
       }).then(c => {
+        // Process the User-Credential Data you received just now
         if (c) {
-          debugger;
+          // Login :)
           this.setState({ user: c.name, mail: c.id });
         }
       }).catch(error => {
