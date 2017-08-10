@@ -44,7 +44,7 @@ class App extends Component {
             'https://accounts.google.com'
           ]
         },
-        mediation: 'silent' // silent | optional | required
+        mediation: 'optional' // silent | optional | required
       }).then(c => {
         // Process the User-Credential Data you received just now
         if (c) {
